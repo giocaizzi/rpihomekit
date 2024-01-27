@@ -1,11 +1,6 @@
 from flask import Flask
-from dotenv import load_dotenv
-import os
 
 from .views import core, apps
-
-# load environment variables
-load_dotenv()
 
 
 def create_app():
