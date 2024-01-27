@@ -16,7 +16,8 @@ def home():
 
 if __name__ == "__main__":
     app.run(
-        # comment out debug=True when deploying to production
+        # comment out when deploying to production
+        # auto reloads the server when code changes
         # debug=True,
         # Setting host to "0.0.0.0" tells
         # the os to listen on all public IPs.
