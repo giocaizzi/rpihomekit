@@ -1,10 +1,20 @@
-[build-system]
-requires = ["setuptools >= 65.0"]
-build-backend = "setuptools.build_meta"
-
-[project]
+[tool.poetry]
 name = "rpihomekit"
-version = "0.0.1"
-dependencies = [
-    "flask",
-]
+version = "0.1.0"
+description = "Rasperry Pi Python homekit"
+authors = ["giocaizzi <giocaizzi@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Flask = "^3.0.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.4"
+pytest-cov = "^4.1.0"
+black = "^24.1.0"
+flake8 = "^7.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
