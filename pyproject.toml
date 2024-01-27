@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "rpihomekit"
-version = "0.1.0"
+version = "0.1.1"
 description = "Rasperry Pi Python homekit"
 authors = ["giocaizzi <giocaizzi@gmail.com>"]
 readme = "README.md"
@@ -8,6 +8,8 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.10"
 Flask = "^3.0.1"
+psutil = "^5.9.8"
+python-dotenv = "^1.0.1"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4.4"

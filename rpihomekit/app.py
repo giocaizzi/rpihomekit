@@ -1,26 +1,23 @@
-from flask import Flask, jsonify
-from importlib import metadata
+from flask import Flask
+from dotenv import load_dotenv
+import os
 
-app = Flask(__name__)
+from .views import core, apps
+
+# load environment variables
+load_dotenv()
 
 
-@app.route("/")
-def home():
-    return jsonify(
-        {
-            "Message": "Welcome to HomeKit",
-            "Version": metadata.metadata("rpihomekit")["version"],
-        }
-    )
+def create_app():
+    app = Flask(__name__)
+
+    # register blueprints
+    app.register_blueprint(core)
+    app.register_blueprint(apps)
+
+    return app
 
 
 if __name__ == "__main__":
-    app.run(
-        # comment out when deploying to production
-        # auto reloads the server when code changes
-        # debug=True,
-        # Setting host to "0.0.0.0" tells
-        # the os to listen on all public IPs.
-        host="0.0.0.0",
-        port=5000,
-    )
+    app = create_app()
+    app.run()
