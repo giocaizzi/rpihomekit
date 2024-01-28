@@ -1,14 +1,28 @@
 // layout.js
-export default function RootLayout({ children }) {
+import Head from 'next/head';
+
+const globalMeta = {
+  siteName: "rpihomekit",
+  siteUrl: "",
+  siteLogo: "",
+  email: "giocaizzi@gmail.com",
+  description: "rpihomekit"
+}
+
+export default function RootLayout({
+  title = globalMeta.siteName,
+  description = globalMeta.description,
+  canonicalUrl = globalMeta.siteUrl,
+  children }) {
   return (
-    <html lang="en">
-      <header>
-        {/* Add your header content here */}
-      </header>
-      <body>{children}</body>
-      <footer>
-        {/* Add your footer content here */}
-      </footer>
-    </html>
+    <div>
+      <Head>
+        <title>{title} </title>
+        <meta name="description" content={description} />
+      </Head>
+      <main>
+        {children}
+      </main>
+    </div>
   );
 }
