@@ -13,3 +13,7 @@ if screen -list | grep -q "server"; then
 fi
 screen -dmS server './scripts/flask-run-dev.sh'
 echo "Server started!"
+
+echo "Starting client..."
+screen -dms client './scripts/react-run-dev.sh'
+echo "Client started!"
