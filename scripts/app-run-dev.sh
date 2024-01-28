@@ -1,8 +1,15 @@
 #!/bin/bash
 
-# Start the Flask app in a detached screen named 'flask-app'
-screen -dmS server bash -c './scripts/flask-run-dev.sh; exec sh' &
+echo "  - Running on shell : $SHELL"
 
-# Start the frontend in a detached screen named 'frontend'
-(cd frontend &&
-screen -dmS client bash -c 'npm run dev; exec sh')
+echo "Starting server..."
+
+# if there is a screen named 'server' already running, do nothing
+# else create a new screen named 'server'
+if screen -list | grep -q "server"; then
+    echo "  > Server is already running!"
+    echo "  > Restarting server..."
+    screen -XS server quit
+fi
+screen -dmS server './scripts/flask-run-dev.sh'
+echo "Server started!"
