@@ -1,7 +1,7 @@
 import {Card, WelcomeCard} from '../components/Card.js';
 import RootLayout from './layout.js';
 
-export default function Home() {
+export default async function Home() {
   return (
     <RootLayout>
       <Card>

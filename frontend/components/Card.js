@@ -1,9 +1,6 @@
-"use client"; // This is a client component 👈🏽
+"use client";
 
-import { useEffect, useState } from 'react';
-import { fetchData } from "../lib/fetchData";
-
-
+import './Card.css';
 
 export function Card({ children }) {
   return (
@@ -15,33 +12,39 @@ export function Card({ children }) {
 
 export function WelcomeCard({ message, version }) {
   return (
-    <>
+    <Card>
       <h2>{message}</h2>
       <div>Version: {version}</div>
-    </>
+    </Card>
   );
 }
 
 export function InfoCard({ info }) {
-  return <p>{info}</p>;
+  return (
+    <Card>
+    <p>{info}</p>
+    </Card>
+  );
 }
 
-export function StatsCard({ stats }) {
-  const [data, setData] = useState(null);
+
+
+import { useState, useEffect } from 'react';
+
+export function StatsCard() {
+  const [data, setData] = useState({});
+
   useEffect(() => {
-    fetchData('/stats')
+    fetch('stats')
+      .then(response => response.json())
       .then(data => setData(data))
-      .catch(err => console.error(err));
+      .catch(error => console.error('Error:', error));
   }, []);
 
-  if (!data) {
-    return 'Loading...';
-  }
-  
   return (
     <div>
-      <h2> Stats</h2>
-      {Object.entries(stats).map(([key, value]) => (
+      <h2>Stats</h2>
+      {Object.entries(data).map(([key, value]) => (
         <div key={key}>{key}: {value}</div>
       ))}
     </div>

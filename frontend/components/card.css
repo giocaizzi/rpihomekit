@@ -1,0 +1,20 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: rgb(20, 188, 149);
+}
+  
+  /* .welcome-card {
+    background-color: #f9f9f9;
+  }
+  
+  .info-card {
+    background-color: #eef;
+  } */

@@ -2,9 +2,9 @@
 
 source .env
 
-for port in $PORT_CLIENT_DEV $PORT_SERVER_DEV; do
-    lsof -i tcp:${port} | awk 'NR!=1 {print $2}' | xargs kill 
-done
+
+lsof -i tcp:$PORT | awk 'NR!=1 {print $2}' | xargs kill 
+
 
 echo "Starting server..."
 # if there is a screen named 'server' already running, do nothing
