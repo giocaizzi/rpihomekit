@@ -18,3 +18,14 @@ export function WelcomeCard({ message, version }) {
 export function InfoCard({ info }) {
   return <p>{info}</p>;
 }
+
+export function StatsCard({ stats }) {
+  return (
+    <div>
+      <h2> Stats</h2>
+      {Object.entries(stats).map(([key, value]) => (
+        <div key={key}>{key}: {value}</div>
+      ))}
+    </div>
+  );
+}
