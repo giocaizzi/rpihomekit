@@ -1,5 +1,5 @@
-import RootLayout from '../app/layout';
-import { StatsCard } from '../components/Card.js';
+import RootLayout from '../layout.js';
+import { StatsCard } from '../../components/Card.js';
 
 export default function Stats() {
     const stats = {
