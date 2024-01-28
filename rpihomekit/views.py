@@ -13,8 +13,8 @@ core = Blueprint("core", __name__)
 def home():
     return jsonify(
         {
-            "Message": "Welcome to HomeKit",
-            "Version": metadata.metadata("rpihomekit")["version"],
+            "message": "Welcome to HomeKit",
+            "version": metadata.metadata("rpihomekit")["version"],
         }
     )
 

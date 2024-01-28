@@ -2,8 +2,11 @@
 
 source .env
 
-# clean all processes on the port
-lsof -i tcp:$PORT | awk 'NR!=1 {print $2}' | xargs kill 
+for port in $PORT_CLIENT $PORT_SERVER; do
+    echo "Cleaning port $port..."
+    # clean all processes on the port
+    lsof -i tcp:$port | awk 'NR!=1 {print $2}' | xargs kill 
+done
 
 if [ "$1" == "--quit" ]; then
     echo "Quitting client and server..."

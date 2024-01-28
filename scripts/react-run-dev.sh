@@ -4,5 +4,5 @@
 source .env
 
 cd frontend
-npm run dev -- -p $PORT
+npm run dev -- -p $PORT_CLIENT
 cd ..

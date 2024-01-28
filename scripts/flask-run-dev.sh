@@ -11,4 +11,4 @@ else
 fi
 
 # Run flask with the port from the .env file
-flask run --debugger --host=$HOST --port=$PORT
+flask run --debugger --host=$HOST --port=$PORT_SERVER
