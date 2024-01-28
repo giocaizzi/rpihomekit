@@ -1,9 +1,6 @@
 #!/bin/bash
 
-echo "  - Running on shell : $SHELL"
-
 echo "Starting server..."
-
 # if there is a screen named 'server' already running, do nothing
 # else create a new screen named 'server'
 if screen -list | grep -q "server"; then
@@ -15,5 +12,10 @@ screen -dmS server './scripts/flask-run-dev.sh'
 echo "Server started!"
 
 echo "Starting client..."
-screen -dms client './scripts/react-run-dev.sh'
+if screen -list | grep -q "client"; then
+    echo "  > Client is already running!"
+    echo "  > Restarting client..."
+    screen -XS client quit
+fi
+screen -dmS client './scripts/react-run-dev.sh'
 echo "Client started!"
