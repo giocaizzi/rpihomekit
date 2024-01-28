@@ -8,7 +8,7 @@ export default function Stats() {
     }
     return (
         <RootLayout>
-            <StatsCard stats={stats} />
+            <StatsCard/>
         </RootLayout>
     );
 }

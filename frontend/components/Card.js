@@ -35,7 +35,7 @@ export function StatsCard() {
   const [data, setData] = useState({});
 
   useEffect(() => {
-    fetch('stats')
+    fetch('/stats')
       .then(response => response.json())
       .then(data => setData(data))
       .catch(error => console.error('Error:', error));

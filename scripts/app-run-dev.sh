@@ -5,6 +5,11 @@ source .env
 # clean all processes on the port
 lsof -i tcp:$PORT | awk 'NR!=1 {print $2}' | xargs kill 
 
+if [ "$1" == "--quit" ]; then
+    echo "Quitting client and server..."
+    exit 0
+fi
+
 echo "Starting server..."
 # if there is a screen named 'server' already running, do nothing
 # else create a new screen named 'server'
