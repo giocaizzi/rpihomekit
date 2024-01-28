@@ -1,3 +1,10 @@
+"use client"; // This is a client component 👈🏽
+
+import { useEffect, useState } from 'react';
+import { fetchData } from "../lib/fetchData";
+
+
+
 export function Card({ children }) {
   return (
     <div className="card">
@@ -20,6 +27,17 @@ export function InfoCard({ info }) {
 }
 
 export function StatsCard({ stats }) {
+  const [data, setData] = useState(null);
+  useEffect(() => {
+    fetchData('/stats')
+      .then(data => setData(data))
+      .catch(err => console.error(err));
+  }, []);
+
+  if (!data) {
+    return 'Loading...';
+  }
+  
   return (
     <div>
       <h2> Stats</h2>
