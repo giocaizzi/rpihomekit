@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
     <RootLayout>
-      <Card message={data.message} client_version={version} server_version={data.server_version} />
+      <Card message={data.message} client_version={version} server_version={data.version} />
     </RootLayout>
   );
 }
