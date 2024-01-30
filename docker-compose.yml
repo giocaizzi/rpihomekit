@@ -7,6 +7,11 @@ services:
       context: ./server
       args:
         - PORT=$PORT_SERVER
-
     ports:
       - $PORT_SERVER:$PORT_SERVER
+  # client:
+  #   image: rpihomekit-client
+  #   build:
+  #     context: ./client
+  #   ports:
+  #     - "$PORT_CLIENT:80"

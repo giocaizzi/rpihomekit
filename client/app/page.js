@@ -1,6 +1,6 @@
 "use client";
 import { useFetch } from './lib/fetch.js';
-import { version } from '../package.json';
+import packageInfo from '../package.json';
 import { Card } from './components/Card.js';
 import RootLayout from './layout.js';
 
@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
     <RootLayout>
-      <Card message={data.message} client_version={version} server_version={data.version} />
+      <Card message={data.message} client_version={packageInfo.version} server_version={data.version} />
     </RootLayout>
   );
 }

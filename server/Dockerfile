@@ -7,11 +7,11 @@ RUN pip install poetry==1.7.1
 ENV POETRY_VIRTUALENVS_CREATE=false
 
 # set work directory
-WORKDIR /app
+WORKDIR /myapp
 
 # copy only required files
 COPY pyproject.toml ./
-COPY rpihomekit ./rpihomekit
+COPY ./rpihomekit ./rpihomekit
 # complains about missing readme.md (?), create fake one
 RUN touch README.md
 
