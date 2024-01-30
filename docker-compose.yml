@@ -1,0 +1,6 @@
+services:
+  server:
+    image: rpihomekit-server
+    build: ./server
+    ports:
+      - "4200:4200"
