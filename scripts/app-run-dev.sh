@@ -22,7 +22,7 @@ if screen -list | grep -q "server"; then
     screen -XS server quit
 fi
 screen -dmS server './scripts/flask-run-dev.sh'
-echo "Server started!"
+echo "Server started on port $PORT_SERVER!"
 
 echo "Starting client..."
 if screen -list | grep -q "client"; then
@@ -31,4 +31,4 @@ if screen -list | grep -q "client"; then
     screen -XS client quit
 fi
 screen -dmS client './scripts/react-run-dev.sh'
-echo "Client started!"
+echo "Client started on port $PORT_CLIENT!"
