@@ -1,11 +1,12 @@
+version: '2'
+
 services:
   server:
     image: rpihomekit-server
-    env_file: .env
     build: 
       context: ./server
       args:
-        - "PORT=$PORT_SERVER"
+        - PORT=$PORT_SERVER
 
     ports:
-      - "$PORT_SERVER:$PORT_SERVER"
+      - $PORT_SERVER:$PORT_SERVER
