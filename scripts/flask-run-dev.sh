@@ -3,6 +3,8 @@
 # Load the .env file
 source .env
 
+cd server
+
 # Check if the --public parameter is provided
 if [[ $1 == "--public" ]]; then
     HOST="0.0.0.0" # Public on the network

@@ -1,2 +1,3 @@
-# rpi-homekit
-Rasperry Pi Homekit
+# rpihomekit
+
+Rasperry Pi homekit.

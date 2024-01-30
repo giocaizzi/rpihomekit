@@ -3,6 +3,5 @@
 # Load the .env file
 source .env
 
-cd frontend
+cd client
 npm run dev -- -p $PORT_CLIENT
-cd ..
