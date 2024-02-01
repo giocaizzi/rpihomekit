@@ -1,5 +1,14 @@
 #!/bin/bash
 
+# ----------------------------------
+# Start the flask app in dev (debug) mode
+# Args:
+#   --public: Run the server on the network
+#
+# Uses the .env file for:
+#   PORT_SERVER: The port to run the server on
+# ----------------------------------
+
 # Load the .env file
 source .env
 
