@@ -23,4 +23,3 @@ ARG PORT=5000
 ENV PORT ${PORT}
 
 CMD gunicorn -w 1 -t 2 -b "0.0.0.0:$PORT" "rpihomekit.app:create_app()"
-# CMD gunicorn -w 1 -t 2 -b 0.0.0.0:5000 "rpihomekit.app:create_app()"
