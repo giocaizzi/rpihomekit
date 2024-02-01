@@ -2,15 +2,21 @@ import './styles.css';
 import { useFetch } from './lib/fetch.js';
 // import packageInfo from '../..package.json';
 
-
-export function Dock({ children }) {
+export function Welcome({ children }) {
   return (
-    <div className="dock shadow">
+    <div className="container shadow">
       <p>Welcome!</p>
     </div>
   );
 }
 
+export function Apps({ children }) {
+  return (
+    <div className="container shadow">
+      <p>Apps:</p>
+    </div>
+  );
+}
 
 export function Card(props) {
 
