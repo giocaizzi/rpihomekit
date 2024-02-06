@@ -20,6 +20,8 @@ else
     PUBLIC=""
 fi
 
+# Clean the ports
+# everytime!
 for port in $PORT_CLIENT $PORT_SERVER; do
     echo "Cleaning port $port..."
     # clean all processes on the port
@@ -31,6 +33,9 @@ if [ "$1" == "--quit" ]; then
     exit 0
 fi
 
+# Start the server and client
+
+# Start the server
 echo "Starting server..."
 # if there is a screen named 'server' already running, do nothing
 # else create a new screen named 'server'
@@ -42,6 +47,8 @@ fi
 screen -dmS server './scripts/flask-run-dev.sh' $PUBLIC
 echo "Server started on port $PORT_SERVER!"
 
+
+# Start the client
 echo "Starting client..."
 if screen -list | grep -q "client"; then
     echo "  > Client is already running!"
