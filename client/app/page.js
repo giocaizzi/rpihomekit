@@ -1,7 +1,7 @@
 "use client";
 
-import { Welcome , Apps} from './components.js';
-import RootLayout from './layout.js';
+import Welcome from '@/components/Welcome';
+import Apps from '@/components/Apps';
 
 
 export default function Home() {
