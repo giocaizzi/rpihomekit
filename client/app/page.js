@@ -1,14 +1,16 @@
 "use client";
 
 import Welcome from '@/components/Welcome';
-import Apps from '@/components/Apps';
+import Box from '@/components/Box';
 
 
 export default function Home() {
   return (
     <div>
       <Welcome/>
-      <Apps/>
+      <Box>
+        <p>Ciao!</p>
+      </Box>
     </div>
   );
 }

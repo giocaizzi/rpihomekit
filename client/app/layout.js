@@ -1,5 +1,5 @@
 import '@/components/styles.css';
-import Header  from '@/components/Header';
+import Header  from '@/components/layouts/Header';
 
 export default function RootLayout({ children }) {
   return (

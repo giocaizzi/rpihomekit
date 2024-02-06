@@ -1,5 +1,7 @@
 import '@/components/styles.css';
 
+import PropTypes from 'prop-types';
+
 
 export default function Card(props) {
 
@@ -12,4 +14,12 @@ export default function Card(props) {
     </div>
   );
 }
+
+Card.propTypes = {
+  message: PropTypes.string,
+  client_version: PropTypes.string,
+  server_version: PropTypes.string
+};
+
+Card.defaultProps = {}
 
